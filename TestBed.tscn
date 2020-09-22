@@ -64,7 +64,9 @@ environment = ExtResource( 1 )
 [node name="DirectionalLight" type="DirectionalLight" parent="ASTH"]
 transform = Transform( 0.256281, -0.758469, 0.599204, 0.201008, 0.648174, 0.734483, -0.945471, -0.0677899, 0.318573, 0, 6, 0 )
 shadow_enabled = true
-shadow_color = Color( 0.423529, 0.376471, 0.47451, 1 )
+shadow_color = Color( 0.796078, 0.745098, 0.854902, 1 )
+shadow_bias = 0.0
+directional_shadow_normal_bias = 0.2
 
 [node name="floor" type="StaticBody" parent="."]
 

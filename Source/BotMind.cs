@@ -21,26 +21,10 @@ public class BotMind : KinematicBody {
         if (e is InputEventMouseButton em) {
             if (em.Pressed) {
                 mini_gui.Visible = true;
-                mini_gui.RectPosition = GetViewport().GetMousePosition() - new Vector2(64, 64);
+                mini_gui.RectPosition = GetViewport().GetMousePosition() - mini_gui.RectSize / 2f;
             }
         }
     }
-
-    // public void b_l() {
-    //     target_point += Vector3.Left;
-    // }
-
-    // public void b_r() {
-    //     target_point += Vector3.Right;
-    // }
-
-    // public void b_u() {
-    //     target_point += Vector3.Forward;
-    // }
-
-    // public void b_d() {
-    //     target_point += Vector3.Back;
-    // }
 
     public void button_null() {
         mode = 0;
@@ -81,6 +65,7 @@ public class BotMind : KinematicBody {
 
     public override void _Ready() {
         mini_gui = GetNode<Control>("bot_GUI");
+        mini_gui.Visible = false;
         text = GetNode<Label>("bot_GUI/box_text");
         rng = new Random();
     }
@@ -114,7 +99,7 @@ public class BotMind : KinematicBody {
 
     public override void _PhysicsProcess(float delta) {
         if (Translation.DistanceTo(target_point) > 0.1f) {
-            var hit = MoveAndCollide(target_point - Translation);
+            var hit = MoveAndCollide((target_point - Translation) / 4);
 
             if (hit != null) {
                 target_point = Translation;
