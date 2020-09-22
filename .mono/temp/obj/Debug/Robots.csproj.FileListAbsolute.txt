@@ -4,3 +4,9 @@
 /home/tastytentacles/Desktop/GameCycle100/Robots/.mono/temp/obj/Debug/Robots.csproj.CoreCompileInputs.cache
 /home/tastytentacles/Desktop/GameCycle100/Robots/.mono/temp/obj/Debug/Robots.dll
 /home/tastytentacles/Desktop/GameCycle100/Robots/.mono/temp/obj/Debug/Robots.pdb
+/home/tasty/Desktop/GameCycle99/Robots/.mono/temp/bin/Debug/Robots.dll
+/home/tasty/Desktop/GameCycle99/Robots/.mono/temp/bin/Debug/Robots.pdb
+/home/tasty/Desktop/GameCycle99/Robots/.mono/temp/obj/Debug/Robots.csprojAssemblyReference.cache
+/home/tasty/Desktop/GameCycle99/Robots/.mono/temp/obj/Debug/Robots.csproj.CoreCompileInputs.cache
+/home/tasty/Desktop/GameCycle99/Robots/.mono/temp/obj/Debug/Robots.dll
+/home/tasty/Desktop/GameCycle99/Robots/.mono/temp/obj/Debug/Robots.pdb

@@ -98,7 +98,7 @@ public class BotMind : KinematicBody {
 
         text.Text = "mode: " + mode;
 
-        if (tick > 2.5) {
+        if (tick > 1.5) {
             switch (mode) {
                 case 1:
                     roam();

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/tastytentacles/Desktop/GameCycle100/Robots/Robots.csproj": {}
+    "/home/tasty/Desktop/GameCycle99/Robots/Robots.csproj": {}
   },
   "projects": {
-    "/home/tastytentacles/Desktop/GameCycle100/Robots/Robots.csproj": {
+    "/home/tasty/Desktop/GameCycle99/Robots/Robots.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/tastytentacles/Desktop/GameCycle100/Robots/Robots.csproj",
+        "projectUniqueName": "/home/tasty/Desktop/GameCycle99/Robots/Robots.csproj",
         "projectName": "Robots",
-        "projectPath": "/home/tastytentacles/Desktop/GameCycle100/Robots/Robots.csproj",
-        "packagesPath": "/home/tastytentacles/.nuget/packages/",
-        "outputPath": "/home/tastytentacles/Desktop/GameCycle100/Robots/.mono/temp/obj/",
+        "projectPath": "/home/tasty/Desktop/GameCycle99/Robots/Robots.csproj",
+        "packagesPath": "/home/tasty/.nuget/packages/",
+        "outputPath": "/home/tasty/Desktop/GameCycle99/Robots/.mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/tastytentacles/.config/NuGet/NuGet.Config"
+          "/home/tasty/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net472"

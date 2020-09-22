@@ -14,12 +14,12 @@ size = Vector2( 20, 20 )
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 10, 1, 10 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=4]
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 10, 1, 1 )
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 1, 1, 12 )
 
 [node name="Spatial" type="Spatial"]
@@ -43,12 +43,14 @@ __meta__ = {
 }
 
 [node name="Button_esc" type="Button" parent="GUI"]
-anchor_right = 1.0
-anchor_bottom = 0.1
-margin_left = 625.273
-margin_top = 32.6908
-margin_right = -30.7269
-margin_bottom = -31.3092
+anchor_left = 0.868
+anchor_top = 0.026
+anchor_right = 0.957
+anchor_bottom = 0.076
+margin_left = 0.312927
+margin_top = -0.589199
+margin_right = 0.233032
+margin_bottom = -0.589211
 text = "Esc"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -78,7 +80,7 @@ shape = SubResource( 3 )
 [node name="bot" parent="." instance=ExtResource( 2 )]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 20, 8 )
+transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 21, 11 )
 current = true
 fov = 100.0
 
@@ -90,7 +92,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="wall_0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="wall_1" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0 )
@@ -100,7 +102,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="wall_1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="wall_2" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8 )
@@ -110,7 +112,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="wall_2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="wall_3" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11 )
@@ -121,7 +123,7 @@ width = 20.0
 
 [node name="CollisionShape" type="CollisionShape" parent="wall_3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="wall_4" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11 )
@@ -132,7 +134,7 @@ width = 20.0
 
 [node name="CollisionShape" type="CollisionShape" parent="wall_4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="wall_5" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0 )
@@ -143,7 +145,7 @@ depth = 24.0
 
 [node name="CollisionShape" type="CollisionShape" parent="wall_5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="wall_6" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0 )
@@ -154,5 +156,5 @@ depth = 24.0
 
 [node name="CollisionShape" type="CollisionShape" parent="wall_6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 [connection signal="pressed" from="GUI/Button_esc" to="GUI" method="mimic_esc"]

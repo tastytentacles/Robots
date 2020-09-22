@@ -14,9 +14,10 @@ height = 1.5
 script = ExtResource( 1 )
 
 [node name="bot_GUI" type="Control" parent="."]
-visible = false
-modulate = Color( 1, 1, 1, 0.501961 )
-margin_right = -0.160019
+modulate = Color( 1, 1, 1, 0.784314 )
+anchor_right = 0.356
+anchor_bottom = 0.2
+margin_right = -0.320007
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -24,20 +25,20 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="bot_GUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 128.0
-margin_bottom = 128.0
 color = Color( 0.215686, 0.215686, 0.215686, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="box_text" type="Label" parent="bot_GUI"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 107.0
-margin_right = 120.0
-margin_bottom = 121.0
+anchor_left = 0.036
+anchor_top = 0.91
+anchor_right = 0.969
+anchor_bottom = 0.964
+margin_left = -0.0970736
+margin_top = -0.105942
+margin_right = 0.0549164
+margin_bottom = 0.0700531
 text = "control box"
 align = 1
 __meta__ = {
@@ -45,26 +46,32 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="bot_GUI"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 120.0
-margin_bottom = 100.0
+anchor_left = 0.031
+anchor_top = 0.031
+anchor_right = 0.969
+anchor_bottom = 0.867
+margin_left = 0.0639997
+margin_top = 0.0639997
+margin_right = -0.0640106
+margin_bottom = 0.0479889
 columns = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button_Null" type="Button" parent="bot_GUI/GridContainer"]
-margin_right = 54.0
-margin_bottom = 20.0
+margin_right = 118.0
+margin_bottom = 214.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "NULL"
 
 [node name="Button_Roam" type="Button" parent="bot_GUI/GridContainer"]
-margin_left = 58.0
-margin_right = 112.0
-margin_bottom = 20.0
+margin_left = 122.0
+margin_right = 240.0
+margin_bottom = 214.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Roam"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
