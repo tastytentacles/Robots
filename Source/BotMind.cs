@@ -11,6 +11,8 @@ public class BotMind : KinematicBody {
 
     private Vector3 target_point = new Vector3();
 
+
+
     public void pressed(
             Camera cam,
             InputEvent e,
@@ -26,6 +28,8 @@ public class BotMind : KinematicBody {
         }
     }
 
+
+    // button functions
     public void button_null() {
         mode = 0;
     }
@@ -38,6 +42,8 @@ public class BotMind : KinematicBody {
         }
     }
 
+
+    // state functions
     public void roam() {
         var flip = Mathf.Floor((float) rng.NextDouble() * 4);
 
@@ -63,10 +69,13 @@ public class BotMind : KinematicBody {
         }
     }
 
+
+    // core logic
     public override void _Ready() {
         mini_gui = GetNode<Control>("bot_GUI");
         mini_gui.Visible = false;
         text = GetNode<Label>("bot_GUI/box_text");
+        target_point = Translation;
         rng = new Random();
     }
 
@@ -99,9 +108,11 @@ public class BotMind : KinematicBody {
 
     public override void _PhysicsProcess(float delta) {
         if (Translation.DistanceTo(target_point) > 0.1f) {
-            var hit = MoveAndCollide((target_point - Translation) / 4);
+            var step = (target_point - Translation) / 4;
+            var hit = MoveAndCollide(step);
 
             if (hit != null) {
+                GD.Print("impact while moving");
                 target_point = Translation;
             } 
         }

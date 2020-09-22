@@ -68,95 +68,103 @@ shadow_color = Color( 0.796078, 0.745098, 0.854902, 1 )
 shadow_bias = 0.0
 directional_shadow_normal_bias = 0.2
 
-[node name="floor" type="StaticBody" parent="."]
-
-[node name="CSGMesh" type="CSGMesh" parent="floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
-calculate_tangents = false
-mesh = SubResource( 2 )
-
-[node name="CollisionShape" type="CollisionShape" parent="floor"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 3 )
-
 [node name="bot" parent="." instance=ExtResource( 2 )]
+
+[node name="bot2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6 )
+
+[node name="bot3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 6 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 21, 11 )
 current = true
 fov = 100.0
 
-[node name="wall_0" type="StaticBody" parent="."]
+[node name="GEOM" type="Spatial" parent="."]
+
+[node name="floor" type="StaticBody" parent="GEOM"]
+
+[node name="CSGMesh" type="CSGMesh" parent="GEOM/floor"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+calculate_tangents = false
+mesh = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="GEOM/floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+shape = SubResource( 3 )
+
+[node name="wall_0" type="StaticBody" parent="GEOM"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4 )
 
-[node name="CSGBox" type="CSGBox" parent="wall_0"]
+[node name="CSGBox" type="CSGBox" parent="GEOM/wall_0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="wall_0"]
+[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 4 )
 
-[node name="wall_1" type="StaticBody" parent="."]
+[node name="wall_1" type="StaticBody" parent="GEOM"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0 )
 
-[node name="CSGBox" type="CSGBox" parent="wall_1"]
+[node name="CSGBox" type="CSGBox" parent="GEOM/wall_1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="wall_1"]
+[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 4 )
 
-[node name="wall_2" type="StaticBody" parent="."]
+[node name="wall_2" type="StaticBody" parent="GEOM"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8 )
 
-[node name="CSGBox" type="CSGBox" parent="wall_2"]
+[node name="CSGBox" type="CSGBox" parent="GEOM/wall_2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="wall_2"]
+[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 4 )
 
-[node name="wall_3" type="StaticBody" parent="."]
+[node name="wall_3" type="StaticBody" parent="GEOM"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11 )
 
-[node name="CSGBox" type="CSGBox" parent="wall_3"]
+[node name="CSGBox" type="CSGBox" parent="GEOM/wall_3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 width = 20.0
 
-[node name="CollisionShape" type="CollisionShape" parent="wall_3"]
+[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="wall_4" type="StaticBody" parent="."]
+[node name="wall_4" type="StaticBody" parent="GEOM"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11 )
 
-[node name="CSGBox" type="CSGBox" parent="wall_4"]
+[node name="CSGBox" type="CSGBox" parent="GEOM/wall_4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 width = 20.0
 
-[node name="CollisionShape" type="CollisionShape" parent="wall_4"]
+[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="wall_5" type="StaticBody" parent="."]
+[node name="wall_5" type="StaticBody" parent="GEOM"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0 )
 
-[node name="CSGBox" type="CSGBox" parent="wall_5"]
+[node name="CSGBox" type="CSGBox" parent="GEOM/wall_5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 depth = 24.0
 
-[node name="CollisionShape" type="CollisionShape" parent="wall_5"]
+[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 6 )
 
-[node name="wall_6" type="StaticBody" parent="."]
+[node name="wall_6" type="StaticBody" parent="GEOM"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0 )
 
-[node name="CSGBox" type="CSGBox" parent="wall_6"]
+[node name="CSGBox" type="CSGBox" parent="GEOM/wall_6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 depth = 24.0
 
-[node name="CollisionShape" type="CollisionShape" parent="wall_6"]
+[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 6 )
 [connection signal="pressed" from="GUI/Button_esc" to="GUI" method="mimic_esc"]
