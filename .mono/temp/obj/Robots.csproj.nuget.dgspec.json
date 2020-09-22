@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/tastytentacles/Desktop/GameCycle100/Robots/Robots.csproj": {}
+  },
+  "projects": {
+    "/home/tastytentacles/Desktop/GameCycle100/Robots/Robots.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/tastytentacles/Desktop/GameCycle100/Robots/Robots.csproj",
+        "projectName": "Robots",
+        "projectPath": "/home/tastytentacles/Desktop/GameCycle100/Robots/Robots.csproj",
+        "packagesPath": "/home/tastytentacles/.nuget/packages/",
+        "outputPath": "/home/tastytentacles/Desktop/GameCycle100/Robots/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/tastytentacles/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "runtimeIdentifierGraphPath": "/usr/lib/mono/msbuild/Current/bin/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
