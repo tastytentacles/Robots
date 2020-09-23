@@ -19,5 +19,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\BotMind.cs" />
     <Compile Include="Source\GUIMind.cs" />
+    <Compile Include="Source\PickupMind.cs" />
   </ItemGroup>
 </Project>

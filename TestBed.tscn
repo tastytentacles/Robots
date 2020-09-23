@@ -1,28 +1,58 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://Objects/bot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Source/GUIMind.cs" type="Script" id=3]
+[ext_resource path="res://Objects/Star.tscn" type="PackedScene" id=4]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -2.8, 0.2, -14.2, -2.8, 0.2, -12.8, -2, 0.2, -12.8, -2, 0.2, -14.2, -6.2, 0.2, -15, -3.2, 0.2, -14.8, -1.2, 0.2, -15, 0, 0.2, -18.8, -8.8, 0.2, -18.8, -3.2, 0.2, -14.8, -2.8, 0.2, -14.2, -2, 0.2, -14.2, -1.2, 0.2, -15, 2.2, 0.2, -14.2, 2.2, 0.2, -12.8, 3, 0.2, -12.8, 3, 0.2, -14.2, 3.8, 0.2, -15, 6.8, 0.2, -14.8, 9, 0.2, -18.8, 0, 0.2, -18.8, 1.8, 0.2, -14.8, 2.2, 0.2, -14.2, 3, 0.2, -14.2, 3.8, 0.2, -15, -1.2, 0.2, -15, 1.8, 0.2, -14.8, 3.8, 0.2, -15, 0, 0.2, -18.8, -8.8, 0.2, -12.8, -7, 0.2, -14.2, -6.2, 0.2, -15, -8.8, 0.2, -18.8, 7.2, 0.2, -14.2, 7.2, 0.2, -13, 9, 0.2, -13, -8.8, 0.2, -12.8, -7, 0.2, -12.8, -7, 0.2, -14.2, 6.8, 0.2, -14.8, 7.2, 0.2, -14.2, 9, 0.2, -13, 9, 0.2, -18.8, 3, 0.2, -12.8, 2.2, 0.2, -12.8, 2.2, 0.2, -11.8, 3, 0.2, -11.6, 6.2, 0.2, -10.8, 3.4, 0.2, -11, 1.6, 0.2, -11, -1.2, 0.2, -10.8, -2, 0.2, -12.8, -2.8, 0.2, -12.8, -2.8, 0.2, -11.8, -2, 0.2, -11.6, -1.2, 0.2, -10.8, -3.4, 0.2, -11, -4.8, 0.2, -10.8, -4.8, 0.2, -6, -3.8, 0.2, -5.2, 3.4, 0.2, -11, 3, 0.2, -11.6, 2.2, 0.2, -11.8, 1.6, 0.2, -11, -2, 0.2, -11.6, -2.8, 0.2, -11.8, -3.4, 0.2, -11, -1.2, 0.2, -10.8, -1.2, 0.2, -10.8, -3.8, 0.2, -5.2, -3.8, 0.2, -3.6, 3.6, 0.2, -1.8, 9, 0.2, -6.6, 6.2, 0.2, -10.8, 7.2, 0.2, -1.2, 7.2, 0.2, 0, 9, 0.2, 0, 9, 0.2, -13, 7.2, 0.2, -13, 7.2, 0.2, -11.8, 3.6, 0.2, -1.8, 6.4, 0.2, -2, 9, 0.2, -6.6, 6.4, 0.2, -2, 7.2, 0.2, -1.2, 9, 0.2, 0, 9, 0.2, -6.6, 9, 0.2, -13, 7.2, 0.2, -11.8, 6.2, 0.2, -10.8, 9, 0.2, -6.6, -8.8, 0.2, -3.4, -8, 0.2, -3.6, -8, 0.2, -5.2, -7, 0.2, -11.6, -7, 0.2, -12.8, -8.8, 0.2, -12.8, -6.6, 0.2, -11, -7, 0.2, -11.6, -8.8, 0.2, -12.8, -8.8, 0.2, -3.4, -8, 0.2, -5.2, -4.8, 0.2, -6, -4.8, 0.2, -10.8, -6.6, 0.2, -11, -7.6, 0.2, -5.8, -8, 0.2, -5.2, -7.6, 0.2, -5.8, -6.6, 0.2, -11, -8, 0.2, -2.6, -8, 0.2, -3.6, -8.8, 0.2, -3.4, -8.8, 0.2, 6, -6, 0.2, 6, -5.8, 0.2, 4.4, -8, 0.2, -2.6, -8.8, 0.2, -3.4, -4.4, 0.2, 4, -4.4, 0.2, -2, -7.2, 0.2, -1.8, -5.8, 0.2, 4.4, -5.8, 0.2, 4.4, -7.2, 0.2, -1.8, -8, 0.2, -2.6, 4.4, 0.2, 4, 4.6, 0.2, 2.2, 3.4, 0.2, 2, 4.4, 0.2, 4, 3.4, 0.2, 2, 3, 0.2, 1.4, -4.4, 0.2, 4, -3.8, 0.2, -2.8, -4.4, 0.2, -2, -4.4, 0.2, 4, 3, 0.2, 1.4, 3, 0.2, -1.2, 3, 0.2, -1.2, 3.6, 0.2, -1.8, -3.8, 0.2, -3.6, -3.8, 0.2, -2.8, 5.2, 0.2, 18.2, 4, 0.2, 18.2, 4, 0.2, 19, 9, 0.2, 19, 4.6, 0.2, 2.2, 4.4, 0.2, 4, 5.4, 0.2, 4, 9, 0.2, 0, 7.2, 0.2, 0, 7.2, 0.2, 1.2, 6.6, 0.2, 2, 4.6, 0.2, 2.2, 5.4, 0.2, 4, 6.2, 0.2, 4.8, 6.2, 0.2, 17.2, 9, 0.2, 19, 9, 0.2, 9.4, 6.2, 0.2, 11, 9, 0.2, 0, 7.2, 0.2, 1.2, 6.6, 0.2, 2, 6.2, 0.2, 4.8, 6.2, 0.2, 11, 9, 0.2, 9.4, 6.2, 0.2, 17.2, 5.2, 0.2, 18.2, 9, 0.2, 19, -11, 2.2, 8.8, -10.8, 2.2, 17.2, -10.8, 2.2, 8.6, -11, 2.2, 0.4, -8.8, 0.2, 15, -6, 0.2, 15, -6, 0.2, 13.8, -5.8, 0.2, 7.8, -6, 0.2, 6, -8.8, 0.2, 6, -8.8, 0.2, 15, -6, 0.2, 13.8, -5.6, 0.2, 13.2, -5.2, 0.2, 8.2, -5.8, 0.2, 7.8, -8.8, 0.2, 6, -3.8, 0.2, 13, -3.8, 0.2, 8.2, -5.2, 0.2, 8.2, -5.6, 0.2, 13.2, -2.6, 0.2, 13, -2, 0.2, 13.4, 2, 0.2, 13.4, 2, 0.2, 8.2, -3.8, 0.2, 8.2, -3.8, 0.2, 8.2, -3.8, 0.2, 13, -2.6, 0.2, 13, 4, 0.2, 19, 4, 0.2, 18.2, 2.8, 0.2, 18.2, -2.4, 0.2, 19, -6, 0.2, 16.4, -6, 0.2, 15, -8.8, 0.2, 15, -5.6, 0.2, 17, -6, 0.2, 16.4, -8.8, 0.2, 15, -8.8, 0.2, 19, 2, 0.2, 13.4, -2, 0.2, 13.4, -1.8, 0.2, 16.4, 2, 0.2, 17.4, -5.6, 0.2, 17, -8.8, 0.2, 19, -2.4, 0.2, 19, -2.6, 0.2, 17.2, -2.4, 0.2, 19, 2.8, 0.2, 18.2, 2, 0.2, 17.4, -1.8, 0.2, 16.4, -2.6, 0.2, 17.2 )
+polygons = [ PoolIntArray( 3, 2, 0 ), PoolIntArray( 0, 2, 1 ), PoolIntArray( 5, 4, 6 ), PoolIntArray( 6, 4, 7 ), PoolIntArray( 7, 4, 8 ), PoolIntArray( 10, 9, 11 ), PoolIntArray( 11, 9, 12 ), PoolIntArray( 16, 15, 13 ), PoolIntArray( 13, 15, 14 ), PoolIntArray( 18, 17, 19 ), PoolIntArray( 19, 17, 20 ), PoolIntArray( 22, 21, 23 ), PoolIntArray( 23, 21, 24 ), PoolIntArray( 26, 25, 27 ), PoolIntArray( 27, 25, 28 ), PoolIntArray( 30, 29, 31 ), PoolIntArray( 31, 29, 32 ), PoolIntArray( 35, 34, 33 ), PoolIntArray( 38, 37, 36 ), PoolIntArray( 40, 39, 41 ), PoolIntArray( 41, 39, 42 ), PoolIntArray( 44, 43, 45 ), PoolIntArray( 45, 43, 46 ), PoolIntArray( 48, 47, 49 ), PoolIntArray( 49, 47, 50 ), PoolIntArray( 52, 51, 53 ), PoolIntArray( 53, 51, 54 ), PoolIntArray( 56, 55, 57 ), PoolIntArray( 57, 55, 58 ), PoolIntArray( 58, 55, 59 ), PoolIntArray( 61, 60, 62 ), PoolIntArray( 62, 60, 63 ), PoolIntArray( 65, 64, 66 ), PoolIntArray( 66, 64, 67 ), PoolIntArray( 69, 68, 70 ), PoolIntArray( 70, 68, 71 ), PoolIntArray( 71, 68, 73 ), PoolIntArray( 71, 73, 72 ), PoolIntArray( 76, 75, 74 ), PoolIntArray( 79, 78, 77 ), PoolIntArray( 82, 81, 80 ), PoolIntArray( 84, 83, 85 ), PoolIntArray( 85, 83, 86 ), PoolIntArray( 88, 87, 89 ), PoolIntArray( 89, 87, 90 ), PoolIntArray( 93, 92, 91 ), PoolIntArray( 96, 95, 94 ), PoolIntArray( 98, 97, 99 ), PoolIntArray( 99, 97, 101 ), PoolIntArray( 99, 101, 100 ), PoolIntArray( 103, 102, 104 ), PoolIntArray( 104, 102, 105 ), PoolIntArray( 108, 107, 106 ), PoolIntArray( 111, 110, 109 ), PoolIntArray( 113, 112, 114 ), PoolIntArray( 114, 112, 115 ), PoolIntArray( 115, 112, 116 ), PoolIntArray( 117, 120, 118 ), PoolIntArray( 118, 120, 119 ), PoolIntArray( 121, 123, 122 ), PoolIntArray( 126, 125, 124 ), PoolIntArray( 128, 127, 129 ), PoolIntArray( 129, 127, 130 ), PoolIntArray( 132, 131, 133 ), PoolIntArray( 133, 131, 134 ), PoolIntArray( 134, 131, 135 ), PoolIntArray( 139, 138, 136 ), PoolIntArray( 136, 138, 137 ), PoolIntArray( 141, 140, 142 ), PoolIntArray( 142, 140, 143 ), PoolIntArray( 146, 145, 144 ), PoolIntArray( 149, 148, 147 ), PoolIntArray( 152, 151, 153 ), PoolIntArray( 153, 151, 150 ), PoolIntArray( 157, 156, 154 ), PoolIntArray( 154, 156, 155 ), PoolIntArray( 159, 158, 160 ), PoolIntArray( 160, 158, 161 ), PoolIntArray( 161, 158, 163 ), PoolIntArray( 161, 163, 162 ), PoolIntArray( 166, 165, 164 ), PoolIntArray( 170, 169, 167 ), PoolIntArray( 167, 169, 168 ), PoolIntArray( 173, 172, 171 ), PoolIntArray( 176, 175, 174 ), PoolIntArray( 178, 177, 179 ), PoolIntArray( 179, 177, 180 ), PoolIntArray( 180, 177, 181 ), PoolIntArray( 181, 177, 182 ), PoolIntArray( 184, 183, 185 ), PoolIntArray( 185, 183, 186 ), PoolIntArray( 188, 187, 189 ), PoolIntArray( 189, 187, 190 ), PoolIntArray( 190, 187, 191 ), PoolIntArray( 194, 193, 192 ), PoolIntArray( 196, 195, 197 ), PoolIntArray( 197, 195, 198 ), PoolIntArray( 201, 200, 199 ), PoolIntArray( 203, 202, 204 ), PoolIntArray( 204, 202, 205 ), PoolIntArray( 207, 206, 208 ), PoolIntArray( 208, 206, 209 ), PoolIntArray( 213, 212, 210 ), PoolIntArray( 210, 212, 211 ), PoolIntArray( 218, 217, 214 ), PoolIntArray( 214, 217, 216 ), PoolIntArray( 214, 216, 215 ) ]
+geometry/parsed_geometry_type = 1
+geometry/collision_mask = 4294967295
+cell/size = 0.2
+cell/height = 0.1
+agent/radius = 1.0
+
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.462745, 0.662745, 0.0666667, 1 )
 
-[sub_resource type="QuadMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="QuadMesh" id=3]
+material = SubResource( 2 )
 size = Vector2( 20, 20 )
 
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 10, 1, 10 )
-
 [sub_resource type="BoxShape" id=4]
+extents = Vector3( 10, 1, 20 )
 
 [sub_resource type="BoxShape" id=5]
-extents = Vector3( 10, 1, 1 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 5, 1, 1 )
 
 [sub_resource type="BoxShape" id=6]
-extents = Vector3( 1, 1, 12 )
+extents = Vector3( 10, 1, 1 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 1, 1, 22 )
 
 [node name="Spatial" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 21, 12 )
+current = true
+fov = 100.0
+
+[node name="ASTH" type="Spatial" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ASTH"]
+environment = ExtResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="ASTH"]
+transform = Transform( 0.256281, -0.758469, 0.599204, 0.201008, 0.648174, 0.734483, -0.945471, -0.0677899, 0.318573, 0, 6, 0 )
+shadow_enabled = true
+shadow_color = Color( 0.796078, 0.745098, 0.854902, 1 )
+shadow_bias = 0.0
+directional_shadow_normal_bias = 0.2
 
 [node name="GUI" type="Control" parent="."]
 anchor_right = 1.0
@@ -56,115 +86,172 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ASTH" type="Spatial" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="ASTH"]
-environment = ExtResource( 1 )
-
-[node name="DirectionalLight" type="DirectionalLight" parent="ASTH"]
-transform = Transform( 0.256281, -0.758469, 0.599204, 0.201008, 0.648174, 0.734483, -0.945471, -0.0677899, 0.318573, 0, 6, 0 )
-shadow_enabled = true
-shadow_color = Color( 0.796078, 0.745098, 0.854902, 1 )
-shadow_bias = 0.0
-directional_shadow_normal_bias = 0.2
-
-[node name="bot" parent="." instance=ExtResource( 2 )]
-
-[node name="bot2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -6 )
-
-[node name="bot3" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 6 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 21, 11 )
-current = true
-fov = 100.0
-
 [node name="GEOM" type="Spatial" parent="."]
 
-[node name="floor" type="StaticBody" parent="GEOM"]
+[node name="bot" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.1, 4 )
 
-[node name="CSGMesh" type="CSGMesh" parent="GEOM/floor"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+[node name="bot2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.899, 0.1, -4.552 )
+
+[node name="bot3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.649, 0.1, 2.367 )
+
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 1 )
+
+[node name="floor" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+
+[node name="CSGMesh" type="CSGMesh" parent="Navigation/NavigationMeshInstance/floor"]
+transform = Transform( 1, 0, 0, 0, -8.74228e-08, 1, 0, -2, -4.37114e-08, 0, 0, 0 )
 calculate_tangents = false
-mesh = SubResource( 2 )
+mesh = SubResource( 3 )
 
-[node name="CollisionShape" type="CollisionShape" parent="GEOM/floor"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/floor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
-[node name="wall_0" type="StaticBody" parent="GEOM"]
+[node name="wall_0" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -4 )
 
-[node name="CSGBox" type="CSGBox" parent="GEOM/wall_0"]
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_0"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
-[node name="wall_1" type="StaticBody" parent="GEOM"]
+[node name="wall_1" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0 )
 
-[node name="CSGBox" type="CSGBox" parent="GEOM/wall_1"]
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 4 )
-
-[node name="wall_2" type="StaticBody" parent="GEOM"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8 )
-
-[node name="CSGBox" type="CSGBox" parent="GEOM/wall_2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 4 )
-
-[node name="wall_3" type="StaticBody" parent="GEOM"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11 )
-
-[node name="CSGBox" type="CSGBox" parent="GEOM/wall_3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-width = 20.0
-
-[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_3"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="wall_4" type="StaticBody" parent="GEOM"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11 )
+[node name="wall_8" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 15 )
 
-[node name="CSGBox" type="CSGBox" parent="GEOM/wall_4"]
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-width = 20.0
 
-[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_4"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 shape = SubResource( 5 )
 
-[node name="wall_5" type="StaticBody" parent="GEOM"]
+[node name="wall_9" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -13 )
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="wall_10" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -13 )
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="wall_11" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -13 )
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 5 )
+
+[node name="wall_2" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+width = 10.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 8 )
+
+[node name="wall_7" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 12 )
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+width = 10.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 8 )
+
+[node name="wall_3" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21 )
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+width = 20.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 6 )
+
+[node name="wall_4" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21 )
+
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+width = 20.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 6 )
+
+[node name="wall_5" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0 )
 
-[node name="CSGBox" type="CSGBox" parent="GEOM/wall_5"]
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-depth = 24.0
+depth = 44.0
 
-[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_5"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
-[node name="wall_6" type="StaticBody" parent="GEOM"]
+[node name="wall_6" type="StaticBody" parent="Navigation/NavigationMeshInstance"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0 )
 
-[node name="CSGBox" type="CSGBox" parent="GEOM/wall_6"]
+[node name="CSGBox" type="CSGBox" parent="Navigation/NavigationMeshInstance/wall_6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-depth = 24.0
+depth = 44.0
 
-[node name="CollisionShape" type="CollisionShape" parent="GEOM/wall_6"]
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/wall_6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
+
+[node name="goals" type="Spatial" parent="."]
+
+[node name="Area" parent="goals" instance=ExtResource( 4 )]
+
+[node name="Area2" parent="goals" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -8 )
+
+[node name="Area3" parent="goals" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -17 )
+
+[node name="Area4" parent="goals" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 11 )
+
+[node name="Area5" parent="goals" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 18 )
 [connection signal="pressed" from="GUI/Button_esc" to="GUI" method="mimic_esc"]
